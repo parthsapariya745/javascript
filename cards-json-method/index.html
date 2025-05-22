@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card-JSON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card-box" id="container"></div>
+
+    <script>
+        let container = document.getElementById("container")
+
+        let cards = [
+            {
+                id: 1,
+                image: "https://m.media-amazon.com/images/I/616Pq63RHDL._AC_UY1000_.jpg",
+                title: "Sports shoes",
+                details: "A shoe designed for sporting and physical activities",
+                price: "599 RS.",
+            },
+            {
+                id: 2,
+                image: "https://cdn.thewirecutter.com/wp-content/media/2024/11/runningshoes-2048px-09528.jpg",
+                title: "Running shoes",
+                details: "A lightweight shoe designed for use by runners.",
+                price: "499 RS.",
+            },
+            {
+                id: 3,
+                image: "https://images.meesho.com/images/products/20960328/3612f_512.webp",
+                title: "Loafer shoes",
+                details: "A type of shoe that is easily slipped on and off the foot without any laces to worry about",
+                price: "899 RS.",
+            },
+            {
+                id: 4,
+                image: "https://i.pinimg.com/736x/0d/f5/c7/0df5c728df22835881cd0129b65a2c93.jpg",
+                title: "Party shoes",
+                details: "Turn heads on the dance floor with party shoes that shine as bright as you do",
+                price: "999 RS.",
+            },
+            {
+                id: 5,
+                image: "https://www.bxxyshoe.in/cdn/shop/files/MG_9108copy_b409beb2-5051-4923-a98c-a63c2c525086.jpg?v=1710394982&width=1946",
+                title: "Formal shoes",
+                details: "Improve your posture and comfort",
+                price: "799 RS.",
+            },
+        ]
+        for (let i = 0; i <= 4; i++) {
+            let cardDetails = document.createElement("div")
+            cardDetails.innerHTML = `<img src="${cards[i].image}">
+            <h2>${cards[i].title}</h2>
+            <p>${cards[i].details}</p>
+            <b>${cards[i].price}</b>` 
+            container.appendChild(cardDetails)
+        }
+    </script>
+</body>
+</html>
