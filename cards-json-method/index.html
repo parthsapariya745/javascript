@@ -15,38 +15,43 @@
         let cards = [
             {
                 id: 1,
-                image: "https://m.media-amazon.com/images/I/616Pq63RHDL._AC_UY1000_.jpg",
+                image: "https://assets.ajio.com/medias/sys_master/root/20230426/ctdn/6448f23c42f9e729d750b516/-473Wx593H-466097863-black-MODEL7.jpg",
                 title: "Sports shoes",
                 details: "A shoe designed for sporting and physical activities",
-                price: "599 RS.",
+                price: "₹ 599",
+                btn: "Buy now",
             },
             {
                 id: 2,
                 image: "https://cdn.thewirecutter.com/wp-content/media/2024/11/runningshoes-2048px-09528.jpg",
                 title: "Running shoes",
                 details: "A lightweight shoe designed for use by runners.",
-                price: "499 RS.",
+                price: "₹ 499",
+                btn: "Buy now",
             },
             {
                 id: 3,
                 image: "https://images.meesho.com/images/products/20960328/3612f_512.webp",
                 title: "Loafer shoes",
-                details: "A type of shoe that is easily slipped on and off the foot without any laces to worry about",
-                price: "899 RS.",
+                details: "a low-cut shoe with a flat heel and a thin leather sole",
+                price: "₹ 899",
+                btn: "Buy now",
             },
             {
                 id: 4,
                 image: "https://i.pinimg.com/736x/0d/f5/c7/0df5c728df22835881cd0129b65a2c93.jpg",
                 title: "Party shoes",
-                details: "Turn heads on the dance floor with party shoes that shine as bright as you do",
-                price: "999 RS.",
+                details: "Party shoes that dance before you do — stylish and shine",
+                price: "₹ 999",
+                btn: "Buy now",
             },
             {
                 id: 5,
                 image: "https://www.bxxyshoe.in/cdn/shop/files/MG_9108copy_b409beb2-5051-4923-a98c-a63c2c525086.jpg?v=1710394982&width=1946",
                 title: "Formal shoes",
                 details: "Improve your posture and comfort",
-                price: "799 RS.",
+                price: "₹ 799",
+                btn: "Buy now",
             },
         ]
         for (let i = 0; i <= 4; i++) {
@@ -54,7 +59,8 @@
             cardDetails.innerHTML = `<img src="${cards[i].image}">
             <h2>${cards[i].title}</h2>
             <p>${cards[i].details}</p>
-            <b>${cards[i].price}</b>` 
+            <b>${cards[i].price}</b>
+            <button>${cards[i].btn}</button>` 
             container.appendChild(cardDetails)
         }
     </script>
