@@ -5,22 +5,26 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
-    background-color: #262137;
+    background-color: #1e1a2b;
 }
 .card-box {
     max-width: 1400px;
+    padding-inline: 20px;
     margin-inline: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 25px;
-    margin-top: 100px;
+    margin-block: 100px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .card-box div {
-    width: 100%;
+    width: 250px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 17px;
-    cursor: pointer;
+    border-radius: 20px;
 }
 .card-box div img {
     width: 100%;
@@ -28,19 +32,11 @@ body {
     object-fit: cover;
     border-radius: 20px;
 }
-.card-box div h2{
-    color: white;
-}
-.card-box div p {
+.card-part .card-text p {
     color: #B0BEC5;
-}
-.card-box div b{
-    color: #FFC107;
-}
-.card-box div p {
     line-height: 26px;
 }
-.card-box div button {
+.card-box .card-part button {
     height: 45px;
     width: 100%;
     transition: 0.5s;
@@ -50,10 +46,21 @@ body {
     border-radius: 26px;
     border: none;
     font-size: 16px;
+    cursor: pointer;
     background-image: linear-gradient(to right, #6441A5 0%, #2a0845  51%, #6441A5  100%)
 }
-.card-box div button:hover {
+.card-box .card-part button:hover {
     background-position: right center; 
     color: #fff;
     box-shadow: 0 0 15px #b962ff;
-}              
+}   
+@media (max-width: 1390px) {
+    .card-box div {
+        width: 310px;
+    }
+}     
+@media (max-width: 480px) {
+    .card-box div{
+        width: 100%;
+    }
+}   

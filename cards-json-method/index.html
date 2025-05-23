@@ -23,7 +23,7 @@
             },
             {
                 id: 2,
-                image: "https://cdn.thewirecutter.com/wp-content/media/2024/11/runningshoes-2048px-09528.jpg",
+                image: "https://anyasreviews.com/wp-content/uploads/2024/07/freet-pace-best-barefoot-running-shoe.jpg",
                 title: "Running shoes",
                 details: "A lightweight shoe designed for use by runners.",
                 price: "₹ 499",
@@ -57,10 +57,14 @@
         for (let i = 0; i <= 4; i++) {
             let cardDetails = document.createElement("div")
             cardDetails.innerHTML = `<img src="${cards[i].image}">
-            <h2>${cards[i].title}</h2>
-            <p>${cards[i].details}</p>
-            <b>${cards[i].price}</b>
-            <button>${cards[i].btn}</button>` 
+            <div class="card-part">
+                <div class="card-text" style="padding: 0px 20px;">
+                    <h2 style="color: white;">${cards[i].title}</h2>
+                    <p>${cards[i].details}</p>
+                    <b style="color: #FFC107;">${cards[i].price}</b>
+                </div>
+                <button>${cards[i].btn}</button>
+            </div>`
             container.appendChild(cardDetails)
         }
     </script>
