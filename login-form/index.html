@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-box" id="loginForm"></div>
+    <script>
+        let userName = "parth"
+        let password = "parth@123"
+
+        loginForm() 
+        function loginForm() {
+            let loginForm = document.getElementById("loginForm")
+
+            loginForm.innerHTML = `<h1 style="text-align: center; font-size: 28px;">Login Form</h1>
+            <input type="text" id="inputUser" placeholder="Enter Username" required>
+            <input type="password" id="inputPass" placeholder="Enter Password" required>
+            <span onclick="forgetPass()">Forgot password?</span>
+            <input type="button" value="Login" onclick="login()">
+            <p style="text-align: center; cursor: pointer;">Do you have an account? <span>Register</span></p>`
+        }
+        function login() {
+            let inputUser = document.getElementById("inputUser")
+            let inputPass = document.getElementById("inputPass")
+
+            if (inputUser.value == userName && inputPass.value == password) {
+                alert("login sucessfully")
+            }
+            else {
+                alert("username and password are incorrect")
+            }
+        }
+        function forgetPass() {
+            let forgetPass = document.getElementById("loginForm")
+            
+            forgetPass.innerHTML = `<h1 style="text-align: center; font-size: 28px;">Login Form</h1>
+            <input type="password" id="changePass" placeholder="Change Password" required>
+            <input type="password" id="confirmPass" placeholder="Confirm Password" required>
+            <input type="button" value="Set Password" onclick="changePass()">`
+        }
+        function changePass() {
+            let change = document.getElementById("changePass")
+            let confirm = document.getElementById("confirmPass")
+
+            if (change.value == confirm.value) {
+                password = change.value
+                alert("password sucessfully change")
+                loginForm() 
+            }
+            else {
+                alert("password can't change")
+            }
+        }
+    </script>
+</body>
+</html>
