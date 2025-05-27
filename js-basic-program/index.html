@@ -54,24 +54,24 @@
 
         function calculator() {
             let choice = document.getElementById("choice").value
-            switch (choice) {
-                case '1':
+            switch (+choice) {
+                case 1:
                     c = a + b
                     alert(`${a} + ${b} = ${c}`)
                     break;
-                case '2':
+                case 2:
                     c = a - b
                     alert(`${a} - ${b} = ${c}`)
                     break;
-                case '3':
+                case 3:
                     c = a * b
                     alert(`${a} * ${b} = ${c}`)
                     break;
-                case '4':
+                case 4:
                     c = a / b
                     alert(`${a} / ${b} = ${c}`)
                     break;
-                case '5':
+                case 5:
                     c = a % b
                     alert(`${a} % ${b} = ${c}`)
                     break;
