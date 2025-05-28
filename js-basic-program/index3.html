@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 12px;
+      }
+      .fibo {
+        border-radius: 12px;
+      }
+      input[type="number"] {
+        padding: 15px;
+        width: 250px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 17px;
+      }
+      input[type="number"]:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fibonacci value</h1>
+    <div class="fibo" id="fibo"></div>
+
+    <script>
+      let input = document.getElementById("fibo");
+      input.innerHTML = `<input type="number" id="number" placeholder="Enter your number" onchange="fiboNum()">`;
+
+      let fiboNum = (() => {
+        let number = document.getElementById("number").value;
+        let first = 0, second = 1, third;
+
+        for (let i = 1; i <= number; i++) {
+          third = first + second;
+          alert(first);
+          first = second;
+          second = third;
+        }
+      });
+    </script>
+  </body>
+</html>
