@@ -47,17 +47,18 @@
       let input = document.getElementById("fibo");
       input.innerHTML = `<input type="number" id="number" placeholder="Enter your number" onchange="fiboNum()">`;
 
-      let fiboNum = (() => {
+      let fiboNum = () => {
         let number = document.getElementById("number").value;
-        let first = 0, second = 1, third;
+        let first = 0, second = 1, third, print = '';
 
         for (let i = 1; i <= number; i++) {
           third = first + second;
-          alert(first);
+          print += first + ' ' 
           first = second;
           second = third;
         }
-      });
+        alert(print)
+      };
     </script>
   </body>
 </html>
