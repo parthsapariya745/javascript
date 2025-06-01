@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0px 13px rgb(255, 255, 255);
+            width: 300px;
+        }
+        .display {
+            background-color: #fff;
+            border: 2px solid #222;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-size: 24px;
+            height: 40px;
+            overflow: hidden;
+        }
+        .display input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 24px;
+            text-align: right;
+            background: transparent;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #777;
+        }
+        .operator {
+            background-color: #ff9500;
+        }
+        .operator:hover {
+            background-color: #ffb042;
+        }
+        .equals {
+            background-color: #28a745;
+        }
+        .equals:hover {
+            background-color: #2ecc71;
+        }
+        .clear {
+            background-color: #dc3545;
+        }
+        .clear:hover {
+            background-color: #e4606d;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="display" readonly placeholder="0">
+        </div>
+        <div class="buttons">
+            <button class="clear" onclick="Clear()">C</button>
+            <button>( )</button>
+            <button class="operator" onclick="mode()">%</button>
+            <button class="operator" onclick="divi()">÷</button>
+            <button onclick="seven()">7</button>
+            <button onclick="eight()">8</button>
+            <button onclick="nine()">9</button>
+            <button class="operator" onclick="multi()">x</button>
+            <button onclick="four()">4</button>
+            <button onclick="five()">5</button>
+            <button onclick="six()">6</button>
+            <button class="operator" onclick="sub()">-</button>
+            <button id="btn1" onclick="one()">1</button>
+            <button onclick="two()">2</button>
+            <button onclick="three()">3</button>
+            <button class="operator" onclick="plus()">+</button>
+            <button onclick="dZero()">00</button>
+            <button onclick="zero()">0</button>
+            <button onclick="point()">.</button>
+            <button class="equals" onclick="equal()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById("display")
+        let add = ''
+
+        let Clear = () => {
+            add = ''
+            display.value = ''
+        }
+        let zero = () => {
+            add += '0'
+            display.value = add
+        }
+        let dZero = () => {
+            add += '00'
+            display.value = add
+        }
+        let one = () => {
+            add += '1'
+            display.value = add
+        }
+        let two = () => {
+            add += '2'
+            display.value = add
+        }
+        let three = () => {
+            add += '3'
+            display.value = add
+        }
+        let four = () => {
+            add += '4'
+            display.value = add
+        }
+        let five = () => {
+            add += '5'
+            display.value = add
+        }
+        let six = () => {
+            add += '6'
+            display.value = add
+        }
+        let seven = () => {
+            add += '7'
+            display.value = add
+        }
+        let eight = () => {
+            add += '8'
+            display.value = add
+        }
+        let nine = () => {
+            add += '9'
+            display.value = add
+        }
+        let point = () => {
+            add += '.'
+            display.value = add
+        }
+        let mode = () => {
+            add += '%'
+            display.value = add  
+        }
+        let divi = () => {
+            add += '/'
+            display.value = add  
+        }
+        let multi = () => {
+            add += '*'
+            display.value = add  
+        }
+        let sub = () => {
+            add += '-'
+            display.value = add  
+        }
+        let plus = () => {
+            add += '+'
+            display.value = add  
+        }
+        let equal = () => {
+            display.value = eval(add)
+        }
+    </script>
+</body>
+</html>

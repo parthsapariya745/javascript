@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="a" placeholder="Enter first value" required>
+        <input type="text" id="b" placeholder="Enter second value" required>
+        <input type="text" id="c" placeholder="Enter third value" required>
+        <input type="button" id="btn" value="click me" onclick="maxValue()">
+    </form>
+    <h2 id="print"></h2>
+
+    <script>
+        
+        let maxValue = ()=>{
+            let a = +document.getElementById("a").value
+            let b = +document.getElementById("b").value
+            let c = +document.getElementById("c").value
+            let btn = document.getElementById("btn")
+            
+            let remove1 = document.getElementById("a")
+            let remove2 = document.getElementById("b")
+            let remove3 = document.getElementById("c")
+            
+            let print = document.getElementById("print")
+            if (a > b) {
+                if (a > c) {
+                    print.innerText = `${a} value is Max`
+                }
+                else {
+                    print.innerText = `${c} value is Max`
+                }
+            }
+            else {
+                if (b > c) {
+                    print.innerText = `${b} value is Max`
+                }
+                else {
+                    print.innerText = `${c} value is Max`
+                }
+            }
+            remove1.value = ''
+            remove2.value = ''
+            remove3.value = ''
+        }
+    </script>
+</body>
+</html>

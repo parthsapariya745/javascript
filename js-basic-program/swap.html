@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="a" placeholder="Enter first value" required>
+        <input type="text" id="b" placeholder="Enter second value" required>
+        <button id="btn">Click Me</button>
+    </form>
+    <h2 id="print1"></h2>
+    <h2 id="print2"></h2>
+    <script>
+        let print1 = document.getElementById("print1")
+        let print2 = document.getElementById("print2") 
+        btn.addEventListener("click", function(e) {
+            e.preventDefault()
+            
+            let a = document.getElementById("a").value
+            let b = document.getElementById("b").value
+            let btn = document.getElementById("btn")
+
+            let remove1 = document.getElementById("a")
+            let remove2 = document.getElementById("b")
+            
+            let c = a 
+            a = b
+            b = c
+
+            print1.innerText = `a = ${a}`
+            print2.innerText = `b = ${b}`
+
+            remove1.value = ''
+            remove2.value = ''
+        })
+    </script>
+</body>
+</html>

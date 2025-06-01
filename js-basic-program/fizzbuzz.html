@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="printNum"></h1>
+    <h1 id="printOutput"></h1> 
+</body>
+<script>
+    let printNum = document.getElementById("printNum")
+    let printOutput = document.getElementById("printOutput")
+    let print = ''
+    for (let i = 1; i <= 50; i++) {
+        print += `${i} `
+    }
+    printNum.innerText = `${print}`
+
+    for (let i = 1; i <= 50; i++) {
+        if (i %3 == 0 && i %5 == 0) {
+            printOutput.innerHTML += `${i} is fizzbuzz<br>`
+        }
+        else if (i %3 == 0) {
+            printOutput.innerHTML += `${i} is fizz<br>`
+        }
+        else if (i %5 == 0) {
+            printOutput.innerHTML += `${i} is buzz<br>`
+        }
+        else {
+            printOutput.innerHTML += `${i}<br>`
+        }
+    }
+</script>
+</html>

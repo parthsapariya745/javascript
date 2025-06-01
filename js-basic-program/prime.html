@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      width: 210px;
+      margin-bottom: 15px;
+    }
+    input[type="button"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    input[type="button"]:hover {
+      background-color: #0056b3;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+</style>
+<body>
+    <h1>Prime Number</h1>
+    <input type="text" id="prime" placeholder="Enter string">
+    <input type="button" value="Click" id="btn" onclick="prime()">
+
+    <h1 id="print"></h1>
+    <script>
+        let print = document.getElementById("print")
+
+        let prime = () => {
+          let Prime = document.getElementById("prime").value
+          let btn = document.getElementById("btn")
+          let remove = document.getElementById("prime")
+            
+          let count = 0
+          for (let i = 1; i <= Prime; i++) {
+            if (Prime % i == 0) {
+              count++
+            }
+          }
+          if (count > 2) {
+            print.innerText = `${Prime} is not a prime number`
+          }
+          else {
+            print.innerText = `${Prime} is a prime number`
+          }
+          remove.value = ''
+        }
+    </script>
+</body>
+</html>

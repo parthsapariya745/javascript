@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #dfe4ea;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1, h2 {
+      color: #2c3e50;
+      font-weight: 600;
+      margin: 5px 0;
+    }
+    .input-field, .btn {
+      width: 260px; 
+      padding: 13px 15px;
+      font-size: 16px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .input-field {
+      border: 1px solid #ccc;
+      box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+    .input-field:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    .btn {
+      background-color: #4a69bd;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #1e3799;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+    }
+  </style>
+  <body>
+    <h1>Simple Calculator</h1>
+    <h2>1. Addition</h2>
+    <h2>2. Subtraction</h2>
+    <h2>3. Multiplication</h2>
+    <h2>4. Divison</h2>
+
+    <input type="text" id="choice" class="input-field" placeholder="Choose Your Number">
+    <input type="text" id="aVal" class="input-field" placeholder="Enter First Value">
+    <input type="text" id="bVal" class="input-field" placeholder="Enter Second Value">
+    <input type="button" id="btn" class="btn" value="Click" onclick="calculator()">
+
+    <script>
+        function calculator() {
+            let choice = document.getElementById("choice").value
+            let a = document.getElementById("aVal").value
+            let b = document.getElementById("bVal").value
+            let btn = document.getElementById("btn")
+
+            switch (+choice) {
+                case 1:
+                    c = a + b
+                    alert(`${a} + ${b} = ${c}`)
+                    break;
+                case 2:
+                    c = a - b
+                    alert(`${a} - ${b} = ${c}`)
+                    break;
+                case 3:
+                    c = a * b
+                    alert(`${a} * ${b} = ${c}`)
+                    break;
+                case 4:
+                    c = a / b
+                    alert(`${a} / ${b} = ${c}`)
+                    break;
+                default:
+                    alert("Invalid number")
+                    break;
+            }
+        }
+    </script>
+  </body>
+</html>

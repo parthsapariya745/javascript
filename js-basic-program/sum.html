@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      outline: none;
+      border-radius: 8px;
+      width: 210px;
+      margin-bottom: 15px;
+    }
+    input[type="button"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    input[type="button"]:hover {
+      background-color: #0056b3;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+    #inBox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+  </style>  
+<body>
+    <h2>Value Sum</h2>
+    <input type="text" id="arrayCreate" placeholder="Enter array Size">
+    <input type="button" id="btn" value="Click" onclick="sum()">
+
+    <div id="inBox"></div>
+    <h1 id="output"></h1>
+    <script>
+      let inBox = document.getElementById("inBox")
+      let output = document.getElementById("output")
+
+      let sum = () => {
+        let arrayCreate = document.getElementById("arrayCreate").value
+        let btn = document.getElementById("btn")
+        let remove = document.getElementById("arrayCreate")
+        let sum = 0
+
+        for (let i = 0; i < arrayCreate; i++) {
+          let input = document.createElement("input")
+          input.type = "text"
+          input.style.marginBottom = `0px`
+          input.placeholder = `Enter array element [${i}]`
+          inBox.appendChild(input)
+        }
+
+        let btn2 = document.createElement("input")
+        btn2.type = `button`
+        btn2.value = `Click Sum`
+        inBox.appendChild(btn2)
+        
+        btn2.addEventListener("click", function(e) {
+          e.preventDefault()
+          
+          for (let i = 0; i < arrayCreate; i++) {
+            sum += input[i]
+          }
+          output.innerText = `sum = ${sum}`
+        })
+        remove.value = ''
+      }
+    </script>
+</body>
+</html>
