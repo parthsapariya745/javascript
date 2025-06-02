@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Baloo+2:wght@400..800&family=Bangers&family=Baskervville:ital@0;1&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script:wght@400..700&family=Enriqueta:wght@400;500;600;700&family=Exile&family=Gantari:ital,wght@0,100..900;1,100..900&family=Heebo:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Londrina+Outline&family=Lora:ital,wght@0,400..700;1,400..700&family=Luckiest+Guy&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nothing+You+Could+Do&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sora:wght@100..800&family=Unbounded:wght@200..900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -17,9 +22,14 @@
         .calculator {
             background-color: #1a1a1a;
             border-radius: 10px;
-            padding: 20px;
+            padding: 0px 20px 20px 20px;
             box-shadow: 0 0px 13px rgb(255, 255, 255);
             width: 300px;
+        }
+        .heading {
+            text-align: center;
+            color: white;
+            font-family: "Dancing Script", cursive;
         }
         .display {
             background-color: #fff;
@@ -80,111 +90,43 @@
 </head>
 <body>
     <div class="calculator">
+        <h1 class="heading">Parth Ltd.</h1>
         <div class="display">
-            <input type="text" id="display" readonly placeholder="0">
+            <input type="text" id="displayVal" readonly placeholder="0">
         </div>
         <div class="buttons">
             <button class="clear" onclick="Clear()">C</button>
             <button>( )</button>
-            <button class="operator" onclick="mode()">%</button>
-            <button class="operator" onclick="divi()">÷</button>
-            <button onclick="seven()">7</button>
-            <button onclick="eight()">8</button>
-            <button onclick="nine()">9</button>
-            <button class="operator" onclick="multi()">x</button>
-            <button onclick="four()">4</button>
-            <button onclick="five()">5</button>
-            <button onclick="six()">6</button>
-            <button class="operator" onclick="sub()">-</button>
-            <button id="btn1" onclick="one()">1</button>
-            <button onclick="two()">2</button>
-            <button onclick="three()">3</button>
-            <button class="operator" onclick="plus()">+</button>
-            <button onclick="dZero()">00</button>
-            <button onclick="zero()">0</button>
-            <button onclick="point()">.</button>
+            <button class="operator" onclick="display('%')">%</button>
+            <button class="operator" onclick="display('/')">÷</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button class="operator" onclick="display('*')">x</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button class="operator" onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button class="operator" onclick="display('+')">+</button>
+            <button onclick="display('00')">00</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="display('.')">.</button>
             <button class="equals" onclick="equal()">=</button>
         </div>
     </div>
 
     <script>
-        let display = document.getElementById("display")
-        let add = ''
-
-        let Clear = () => {
-            add = ''
-            display.value = ''
+        function Clear() {
+            document.getElementById("displayVal").value = ''
         }
-        let zero = () => {
-            add += '0'
-            display.value = add
+        function display(val) {
+            document.getElementById("displayVal").value += val
         }
-        let dZero = () => {
-            add += '00'
-            display.value = add
-        }
-        let one = () => {
-            add += '1'
-            display.value = add
-        }
-        let two = () => {
-            add += '2'
-            display.value = add
-        }
-        let three = () => {
-            add += '3'
-            display.value = add
-        }
-        let four = () => {
-            add += '4'
-            display.value = add
-        }
-        let five = () => {
-            add += '5'
-            display.value = add
-        }
-        let six = () => {
-            add += '6'
-            display.value = add
-        }
-        let seven = () => {
-            add += '7'
-            display.value = add
-        }
-        let eight = () => {
-            add += '8'
-            display.value = add
-        }
-        let nine = () => {
-            add += '9'
-            display.value = add
-        }
-        let point = () => {
-            add += '.'
-            display.value = add
-        }
-        let mode = () => {
-            add += '%'
-            display.value = add  
-        }
-        let divi = () => {
-            add += '/'
-            display.value = add  
-        }
-        let multi = () => {
-            add += '*'
-            display.value = add  
-        }
-        let sub = () => {
-            add += '-'
-            display.value = add  
-        }
-        let plus = () => {
-            add += '+'
-            display.value = add  
-        }
-        let equal = () => {
-            display.value = eval(add)
+        function equal() {
+            document.getElementById("displayVal").value = eval(document.getElementById("displayVal").value)
         }
     </script>
 </body>

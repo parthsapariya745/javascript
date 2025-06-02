@@ -50,21 +50,22 @@
     <h1 id="print"></h1>
     <script>
         let print = document.getElementById("print")
-        let calculate = 0
 
         leapYear = () => {
-            let start = document.getElementById("start").value
-            let end = document.getElementById("end").value
+            let start = +document.getElementById("start").value
+            let end = +document.getElementById("end").value
             let btn = document.getElementById("btn")
 
             let remove1 = document.getElementById("start")
             let remove2 = document.getElementById("end")
-
-            print.innerText = `${start} `
+            
+            print.innerHTML = ''
             for (let i = start; i <= end; i++) {
-              start += 4 + " "
+              if (start <= end) {
+                print.innerHTML += `${start} `
+                start += 4
+              }
             }
-            print.innerText = `${start} `
             remove1.value = ''
             remove2.value = ''
         }

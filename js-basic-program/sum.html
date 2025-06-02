@@ -59,15 +59,16 @@
     <script>
       let inBox = document.getElementById("inBox")
       let output = document.getElementById("output")
+      let plus = ''
+      let input = ''
 
       let sum = () => {
         let arrayCreate = document.getElementById("arrayCreate").value
         let btn = document.getElementById("btn")
         let remove = document.getElementById("arrayCreate")
-        let sum = 0
 
         for (let i = 0; i < arrayCreate; i++) {
-          let input = document.createElement("input")
+          input = document.createElement("input")
           input.type = "text"
           input.style.marginBottom = `0px`
           input.placeholder = `Enter array element [${i}]`
@@ -83,9 +84,9 @@
           e.preventDefault()
           
           for (let i = 0; i < arrayCreate; i++) {
-            sum += input[i]
+            plus += input[i]
           }
-          output.innerText = `sum = ${sum}`
+          output.value = `sum = ${plus}`
         })
         remove.value = ''
       }
