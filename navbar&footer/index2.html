@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="navbar" class="same"></div>
+
+    <div id="footer" class="same"></div>
+
+    <script type="module">
+      import nav from "./component/navbar.js";
+      document.getElementById("navbar").appendChild(nav());
+
+      import foot from "./component/footer.js";
+      document.getElementById("footer").appendChild(foot());
+    </script>
+  </body>
+</html>

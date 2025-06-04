@@ -1,0 +1,137 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  background: #121212;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background: #1e1e1e;
+  padding: 25px 28px;
+  border-radius: 12px;
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  color: #fff9f9;
+  border-radius: 5px;
+}
+.input-area input:focus {
+  outline: 1px solid #cdcdcd;
+  outline-offset: 2px;
+}
+.input-area button {
+  padding: 10px 15px;
+  background: #12bc3a;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.input-area button:hover {
+  background: #11b036;
+  transform: scale(1.05);
+}
+.input-area button:focus {
+  outline: 2px solid #0fa131;
+  outline-offset: 2px;
+}
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+.todo-list li {
+  background: #2a2a2a;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in;
+}
+.task-text {
+  font-size: 16px;
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+.actions button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.edit-btn {
+  background: #ff9800;
+  color: #ffffff;
+}
+.edit-btn:hover {
+  background: #fb8c00;
+  transform: scale(1.05);
+}
+.edit-btn:focus {
+  outline: 2px solid #ff9800;
+  outline-offset: 2px;
+}
+.delete-btn {
+  background: #f44336;
+  color: #ffffff;
+}
+.delete-btn:hover {
+  background: #e53935;
+  transform: scale(1.05);
+}
+.delete-btn:focus {
+  outline: 2px solid #e53935;
+  outline-offset: 2px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 15px 20px;
+  }
+  .input-area {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .input-area button {
+    width: 100%;
+    padding: 12px;
+  }
+}
