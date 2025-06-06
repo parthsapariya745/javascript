@@ -16,11 +16,11 @@ btn.addEventListener("click", function () {
         <button class="edit-btn">Edit</button>
         <button class="delete-btn">Delete</button>
       </div>`;
-    remove.value = "";
-    empty.innerText = "";
+    remove.value = '';
+    empty.innerText = '';
     operation(li);
   } else {
-    empty.innerText = `*please enter your task`;
+    empty.innerText = `*Please enter your task`;
   }
 
   function operation(li) {
@@ -30,20 +30,21 @@ btn.addEventListener("click", function () {
     li.querySelector(".edit-btn").addEventListener("click", function () {
       li.innerHTML = `
         <div class="box"> 
-          <input type="text" class="edit-task" id="editTask" placeholder="Enter a edit task">
+          <input type="text" class="edit-task" id="editTask" placeholder="${newTask}">
           <button class="edit-btn" id="output">Save</button>
         </div>`;
 
       li.querySelector("#output").addEventListener("click", function () {
         let editTask = document.getElementById("editTask").value;
+        newTask = editTask
         li.innerHTML = `
-          <span class="task-text">${editTask}</span>
-          <div class="actions"> 
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
-          </div>`; 
+        <span class="task-text">${editTask}</span>
+        <div class="actions"> 
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+        </div>`; 
         operation(li);
       });
     });
   }
-});
+})
