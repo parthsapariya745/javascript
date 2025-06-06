@@ -1,6 +1,6 @@
-*{
-  margin: 0px;
-  padding: 0px;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
@@ -11,19 +11,20 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding-inline: 20px;
 }
 .container {
   background: #1e1e1e;
   padding: 25px 28px;
   border-radius: 12px;
-  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
   width: 100%;
   max-width: 400px;
 }
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #fff;
 }
 .input-area {
   display: flex;
@@ -34,7 +35,7 @@ h1 {
   flex: 1;
   padding: 10px;
   font-size: 16px;
-  background-color: #2b2b2b;
+  background: #2b2b2b;
   border: 1px solid #444;
   color: #fff9f9;
   border-radius: 5px;
@@ -43,14 +44,16 @@ h1 {
   outline: 1px solid #cdcdcd;
   outline-offset: 2px;
 }
-.input-area button {
+.input-area button, button {
   padding: 10px 15px;
-  background: #12bc3a;
-  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.input-area button {
+  background: #12bc3a;
+  color: #fff;
 }
 .input-area button:hover {
   background: #11b036;
@@ -80,17 +83,10 @@ h1 {
   color: #e0e0e0;
   line-height: 1.5;
 }
-.actions button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
 .edit-btn {
   background: #ff9800;
-  color: #ffffff;
+  color: #fff;
+  margin-left: 10px;
 }
 .edit-btn:hover {
   background: #fb8c00;
@@ -102,7 +98,8 @@ h1 {
 }
 .delete-btn {
   background: #f44336;
-  color: #ffffff;
+  color: #fff;
+  margin-left: 10px;
 }
 .delete-btn:hover {
   background: #e53935;
@@ -111,6 +108,20 @@ h1 {
 .delete-btn:focus {
   outline: 2px solid #e53935;
   outline-offset: 2px;
+}
+.box {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.edit-task {
+  flex: 1;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: white;
 }
 @keyframes fadeIn {
   from {

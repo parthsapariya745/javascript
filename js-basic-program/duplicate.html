@@ -73,25 +73,28 @@
           input.style.marginBottom = `0px`;
           input.placeholder = `Enter array element [${i}]`;
           inBox.appendChild(input);
-          inputs.push(input)
+          inputs.push(input);
         }
         let btn2 = document.createElement("input");
         btn2.type = `button`;
-        btn2.value = `Click Sum`;
-        btn2.onclick = sum
+        btn2.value = `Click a Duplicate Remove`;
+        btn2.onclick = duplicate;
         inBox.appendChild(btn2);
 
         remove.value = "";
       };
 
-      let sum = () => {
-        let plus = 0
+      let duplicate = () => {
+        let dup = 0;
+        let dupRemove = []
 
         for (let i = 0; i < inputs.length; i++) {
-          plus += Number(inputs[i].value)
+          if (dupRemove.includes(inputs[i].value)) {
+            dup += dupRemove.push(inputs[i].value)
+          }
         }
-        output.innerText = `Sum = ${plus}`
-      }
+        output.innerText = `Without Duplicate = ${dup}`;
+      };
     </script>
   </body>
 </html>

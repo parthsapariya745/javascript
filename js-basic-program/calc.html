@@ -71,34 +71,34 @@
     <input type="button" id="btn" class="btn" value="Click" onclick="calculator()">
 
     <script>
-        function calculator() {
-            let choice = document.getElementById("choice").value
-            let a = document.getElementById("aVal").value
-            let b = document.getElementById("bVal").value
-            let btn = document.getElementById("btn")
+      function calculator() {
+        let choice = document.getElementById("choice").value
+        let a = document.getElementById("aVal").value
+        let b = document.getElementById("bVal").value
+        let btn = document.getElementById("btn")
 
-            switch (+choice) {
-                case 1:
-                    c = a + b
-                    alert(`${a} + ${b} = ${c}`)
-                    break;
-                case 2:
-                    c = a - b
-                    alert(`${a} - ${b} = ${c}`)
-                    break;
-                case 3:
-                    c = a * b
-                    alert(`${a} * ${b} = ${c}`)
-                    break;
-                case 4:
-                    c = a / b
-                    alert(`${a} / ${b} = ${c}`)
-                    break;
-                default:
-                    alert("Invalid number")
-                    break;
-            }
+        switch (+choice) {
+          case 1:
+            c = a + b
+            alert(`${a} + ${b} = ${c}`)
+            break;
+          case 2:
+            c = a - b
+            alert(`${a} - ${b} = ${c}`)
+            break;
+          case 3:
+            c = a * b
+            alert(`${a} * ${b} = ${c}`)
+            break;
+          case 4:
+            c = a / b
+            alert(`${a} / ${b} = ${c}`)
+            break;
+          default:
+            alert("Invalid number")
+            break;
         }
+      }
     </script>
   </body>
 </html>
