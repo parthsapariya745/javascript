@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Slider</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- remix icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <!-- remix icon cdn -->
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-box">
+            <div class="slider-img">
+                <img width="100%" src="https://static.vecteezy.com/system/resources/thumbnails/049/855/871/small_2x/stunning-high-resolution-nature-and-landscape-backgrounds-breathtaking-scenery-in-hd-photo.jpg" alt="">
+            </div>
+            <div class="slider-img">
+                <img width="100%" src="https://m.media-amazon.com/images/I/61qbMx4oXJL.jpg" alt="">
+            </div>
+            <div class="slider-img">
+                <img width="100%" src="https://soliloquywp.com/wp-content/uploads/2016/08/wordpress-slider-for-custom-post-types.jpg" alt="">
+            </div>
+            <div class="slider-img">
+                <img width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyCOJzb0KbZogU6POakVT5iVSZurzIjvYSXy6iN-yEyR6B6iwJvmZcP2kNhOIFtlyxyOg&usqp=CAU" alt="">
+            </div>
+        </div>
+        <div class="move">
+            <div class="button prev" id="left"><i class="ri-arrow-left-s-line" style="cursor: pointer;" onclick="prev()"></i></div>
+            <div class="button next" id="right"><i class="ri-arrow-right-s-line" style="cursor: pointer;" onclick="next()"></i></div>
+        </div>
+    </div>
+
+    <script>
+        let count = 0
+        let sliderBox = document.querySelector(".slider-box")
+        let sliderImg = document.querySelectorAll(".slider-img")
+
+        function prev() {
+            if (count > 0) {
+                count--
+                sliderBox.style.transform = `translateX(-${count * 100}%)`  
+            }
+        }
+
+        function next() {
+            if (count < sliderImg.length - 1) {
+                count++
+                sliderBox.style.transform = `translateX(-${count * 100}%)`
+            }
+        }
+    </script>
+</body>
+</html>
