@@ -1,36 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1 id="printNum"></h1>
-    <h1 id="printOutput"></h1> 
-</body>
-<script>
-    let printNum = document.getElementById("printNum")
-    let printOutput = document.getElementById("printOutput")
-    let print = ''
-    for (let i = 1; i <= 50; i++) {
-        print += `${i} `
+  </head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    printNum.innerText = `${print}`
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 200px;
+    }
+    input[type="button"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <body>
+    <h1 id="printNum"></h1>
+    <input type="text" id="value" placeholder="enter 1 to 50 number" />
+    <input type="button" value="Click" onclick="valNum()" />
+  </body>
+  <script>
+    let printNum = document.getElementById("printNum");
+    let print = "";
 
     for (let i = 1; i <= 50; i++) {
-        if (i %3 == 0 && i %5 == 0) {
-            printOutput.innerHTML += `${i} is fizzbuzz<br>`
-        }
-        else if (i %3 == 0) {
-            printOutput.innerHTML += `${i} is fizz<br>`
-        }
-        else if (i %5 == 0) {
-            printOutput.innerHTML += `${i} is buzz<br>`
-        }
-        else {
-            printOutput.innerHTML += `${i}<br>`
-        }
+      print += `${i} `;
     }
-</script>
+    printNum.innerText = `${print}`;
+
+    function valNum() {
+      let value = document.getElementById("value").value;
+      let remove = document.getElementById("value")
+
+      if (value % 3 == 0 && value % 5 == 0) {
+        printNum.innerHTML = `${value} is fizzbuzz`;
+      } 
+      else if (value % 3 == 0) {
+        printNum.innerHTML = `${value} is fizz`;
+      } 
+      else if (value % 5 == 0) {
+        printNum.innerHTML = `${value} is buzz`;
+      } 
+      else {
+        printNum.innerHTML = `${value}`;
+      }
+      remove.value = ''
+    }
+  </script>
 </html>

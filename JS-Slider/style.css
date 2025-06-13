@@ -11,46 +11,37 @@ body {
     justify-content: center;
 }
 .slider-container {
-    overflow: hidden;
     width: 100vw;
-    max-width: 1200px;
     position: relative;
-    margin-inline: auto;
     height: 85vh; 
 }
 .slider-box {
     display: flex;
-    width: 100vw; 
     transition: transform 0.5s;
 }
 .slider-img {
-    flex: 0 0 100vw;
+    flex: 0 0 100vw; 
     display: flex;
     justify-content: center;
 }
 .slider-img img {
     height: 85vh;
+    width: 80vw;
     object-fit: cover;
-}
-.slider-img {
-    flex: 0 0 100vw;
-    display: flex;
-    justify-content: center;
+    border-radius: 50px;
 }
 .move {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
     font-size: 50px;
-    transform: translateY(-50%);
-    z-index: 10;
+    padding-inline: 130px;
 }
-.move .button {
-    background-color: black;
+.move .btn {
+    background-color: rgb(51, 57, 212);
     color: white;
     border-radius: 50%;
     display: flex;

@@ -23,7 +23,7 @@
       outline: none;
       border-radius: 8px;
       width: 210px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     input[type="button"] {
       padding: 10px 20px;
@@ -50,7 +50,7 @@
     }
   </style>
   <body>
-    <h2>Value Sum</h2>
+    <h2>Duplicate Value</h2>
     <input type="text" id="arrayCreate" placeholder="Enter array Size" />
     <input type="button" id="btn" value="Click" onclick="create()" />
     <div id="inBox"></div>
@@ -93,7 +93,7 @@
             dup += dupRemove.push(inputs[i].value)
           }
         }
-        output.innerText = `Without Duplicate = ${dup}`;
+        output.innerText = `Without Duplicate Value = ${dup}`;
       };
     </script>
   </body>
