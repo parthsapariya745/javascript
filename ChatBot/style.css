@@ -89,7 +89,7 @@ body {
   border-top-right-radius: 5px;
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.2);
 }
-.chat-input {
+.chat-input form {
   padding: 15px;
   background-color: #363636;
   display: flex;
