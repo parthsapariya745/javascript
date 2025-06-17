@@ -5,49 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Button color change</title>
   </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    button {
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #414eff, #2b72ff);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.4s ease, transform 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    button:hover {
+      background: linear-gradient(45deg, #1fa2ff, #12d8fa, #a6ffcb);
+      transform: scale(1.05);
+    }
+  </style>
   <body id="bodyColor">
-    <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-      }
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
-      button {
-        padding: 12px 24px;
-        background: linear-gradient(45deg, #414eff, #2b72ff);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background 0.4s ease, transform 0.2s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      }
-      button:hover {
-        background: linear-gradient(45deg, #1fa2ff, #12d8fa, #a6ffcb);
-        transform: scale(1.05);
-      }
-    </style>
+    <button onclick="colorChange()">click color change</button>
   </body>
-  <button onclick="colorChange()">click color change</button>
   <script>
     let bodyColor = document.getElementById("bodyColor");
 
     let colorChange = (() => {
-        let x = Math.floor(Math.random() * 255)
-        let y = Math.floor(Math.random() * 255)
-        let z = Math.floor(Math.random() * 255)
+      let x = Math.floor(Math.random() * 255)
+      let y = Math.floor(Math.random() * 255)
+      let z = Math.floor(Math.random() * 255)
 
-        // bodyColor.style.background = linear-gradient(${x}deg, rgb(${x}, ${y}, ${z}), rgb(${z}, ${y}, ${x}), rgb(${y}, ${x}, ${z}));
-        bodyColor.style.background = `radial-gradient(circle, rgb(${x}, ${y}, ${z}), rgb(${z}, ${y}, ${x}), rgb(${y}, ${x}, ${z}))`;
-        // bodyColor.style.background = conic-gradient(rgb(${x}, ${y}, ${z}), rgb(${z}, ${y}, ${x}), rgb(${y}, ${x}, ${z}));
+      // bodyColor.style.background = `linear-gradient(${x}deg, rgb(${x}, ${y}, ${z}), rgb(${z}, ${y}, ${x}), rgb(${y}, ${x}, ${z}))`;
+      bodyColor.style.background = `radial-gradient(circle, rgb(${x}, ${y}, ${z}), rgb(${z}, ${y}, ${x}), rgb(${y}, ${x}, ${z}))`;
+      // bodyColor.style.background = `conic-gradient(rgb(${x}, ${y}, ${z}), rgb(${z}, ${y}, ${x}), rgb(${y}, ${x}, ${z}))`;
     })
   </script>
 </html>
