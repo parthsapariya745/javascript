@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="show"></h1>
+    <h1 class="show"></h1>
+    <h1 class="show"></h1>
+    <script>
+      let show = document.querySelectorAll(".show");
+
+      let p1 = localStorage.getItem("student1");
+      let p2 = localStorage.getItem("student2");
+      let p3 = localStorage.getItem("student3");
+
+      let data = [p1, p2, p3];
+
+      show.forEach((e, i) => {
+        e.innerText = data[i];
+      });
+    </script>
+  </body>
+</html>
